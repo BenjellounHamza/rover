@@ -3,26 +3,30 @@ package commands;
 import model.CardinalDirection;
 import model.Rover;
 
-public class SpinR extends Spin {
+public class SpinR extends Command {
 
 	@Override
-	public void execute(Rover rover) {		
-		switch(rover.getCardinalDirection()) {
-	      case N: 
-	        rover.setCardinalDirection(CardinalDirection.E);
-	        break;
-	      case E: 
-	    	rover.setCardinalDirection(CardinalDirection.S);
-	        break;
-	      case S:
-	    	rover.setCardinalDirection(CardinalDirection.W);
-	        break;
-	      case W:
-	    	rover.setCardinalDirection(CardinalDirection.N);
-	    	break;
-	      default:
-	        throw new RuntimeException("Invalid spin");
-	    }
+	void executeN(Rover rover) {
+		rover.setCardinalDirection(CardinalDirection.E);
+		
+	}
+
+	@Override
+	void executeS(Rover rover) {
+		rover.setCardinalDirection(CardinalDirection.W);
+		
+	}
+
+	@Override
+	void executeE(Rover rover) {
+		rover.setCardinalDirection(CardinalDirection.S);
+		
+	}
+
+	@Override
+	void executeW(Rover rover) {
+		rover.setCardinalDirection(CardinalDirection.N);
+		
 	}
 
 }

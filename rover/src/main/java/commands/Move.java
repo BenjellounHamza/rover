@@ -2,25 +2,30 @@ package commands;
 
 import model.Rover;
 
-public class Move implements Command {
+public class Move extends Command {
+	
+	@Override
+	void executeN(Rover rover) {
+		rover.setY(rover.getY() + 1);
+		
+	}
 
-	public void execute(Rover rover) {		
-		switch(rover.getCardinalDirection()) {
-	      case N: 
-	        rover.setY(rover.getY() + 1);
-	        break;
-	      case S: 
-	    	rover.setY(rover.getY() - 1);
-	        break;
-	      case E:
-	    	rover.setX(rover.getX() + 1);
-	        break;
-	      case W:
-	    	rover.setX(rover.getX() - 1);
-	    	break;
-	      default:
-	        throw new RuntimeException("Invalid move");
-	    }
+	@Override
+	void executeS(Rover rover) {
+		rover.setY(rover.getY() - 1);
+		
+	}
+
+	@Override
+	void executeE(Rover rover) {
+		rover.setX(rover.getX() + 1);
+		
+	}
+
+	@Override
+	void executeW(Rover rover) {
+		rover.setX(rover.getX() - 1);
+		
 	}
 
 }

@@ -23,10 +23,9 @@ public class FileParser {
 	}
 
 	public static void addOrders(String line, Rover rover) {
-		
 		FileChecker.checkCommands(line);
-		for (char operation: line.toCharArray()) {
-             rover.takeOrder(CommandFactory.getOperation(operation));
+		for (String operation: line.split("")) {
+             rover.takeOrder(CommandFactory.valueOf(operation).getCommand());
 		 }
 		
 	}
