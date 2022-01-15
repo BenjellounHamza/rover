@@ -1,17 +1,18 @@
 package commands;
 
-import java.util.HashMap;
-import java.util.Map;
+public enum CommandFactory {
+	M(new Move()),
+	R(new SpinR()),
+	L(new SpinL());
 
-public class CommandFactory {
-    static Map<Character, Command> operationMap = new HashMap<Character, Command>();
-
-    static {
-        operationMap.put('M', new Move());
-        operationMap.put('R', new SpinR());
-        operationMap.put('L', new SpinL());
-    }
-    public static Command getOperation(char operator) {
-        return operationMap.get(operator);
-    }
+	final private Command command;
+	
+	CommandFactory(Command command) {
+		this.command = command;
+	}
+	public Command getCommand() {
+		return command;
+	}
+	
+	
 }
