@@ -4,11 +4,11 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-public class FileChecker {
+public class InputChecker {
 
 	
-	static private Set<String> possibleDirections = new HashSet<>(Arrays.asList("N", "E", "S", "W"));
-	static private Set<Character> possibleCommands = new HashSet<>(Arrays.asList('L', 'R', 'M'));
+	static private final Set<String> possibleDirections = new HashSet<>(Arrays.asList("N", "E", "S", "W"));
+	static private final Set<Character> possibleCommands = new HashSet<>(Arrays.asList('L', 'R', 'M'));
 	
 	
 	public static void checkPlateau(String line) throws IllegalArgumentException{

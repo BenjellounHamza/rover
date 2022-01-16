@@ -1,4 +1,5 @@
 import static org.junit.jupiter.api.Assertions.*;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -44,7 +45,7 @@ class CommandsTest {
 		Command command = new SpinL();
 		rover.takeOrder(command);
 		assertSame(rover.getCommands().get(rover.getCommands().size() - 1), command);
-		rover.placeOrders();;
+		rover.placeOrders();
 		assertEquals(1, rover.getX());
 		assertEquals(2, rover.getY());
 		assertEquals(rover.getCardinalDirection(), CardinalDirection.W);
@@ -55,10 +56,10 @@ class CommandsTest {
 		rover.setY(5);
 		Command command = new Move();
 		rover.takeOrder(command);
-		assertThrows(IllegalArgumentException.class, () -> {
+		Exception  exception  = assertThrows(IllegalArgumentException.class, () -> {
 			rover.placeOrders();
 	    });
-		
+		assertEquals("We can't move outside the plateau", exception.getMessage());
 	}
 	
 	@Test
@@ -67,10 +68,12 @@ class CommandsTest {
 		rover.setCardinalDirection(CardinalDirection.E);
 		Command command = new Move();
 		rover.takeOrder(command);
-		assertThrows(IllegalArgumentException.class, () -> {
+		Exception  exception  = assertThrows(IllegalArgumentException.class, () -> {
 			rover.placeOrders();
 	    });
+		assertEquals("We can't move outside the plateau", exception.getMessage());
 		
 	}
+	
 
 }

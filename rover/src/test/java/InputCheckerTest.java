@@ -2,17 +2,17 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import utils.FileChecker;
+import utils.InputChecker;
 import utils.Plateau;
 
-class FileCheckerTest {
+class InputCheckerTest {
 
     @Test
     void checkPlateauTest1() {
     	
         String line = "0 0";
         Exception  exception = assertThrows(IllegalArgumentException.class, () -> {
-			FileChecker.checkPlateau(line);
+			InputChecker.checkPlateau(line);
 	    });
         
         assertEquals("The plateau's coordinates must be greater than 0", exception.getMessage());
@@ -24,7 +24,7 @@ class FileCheckerTest {
     	
         String line = "5";
         Exception  exception = assertThrows(IllegalArgumentException.class, () -> {
-			FileChecker.checkPlateau(line);
+			InputChecker.checkPlateau(line);
 	    });
         
         assertEquals("The plateau shoud have 2 coordinates", exception.getMessage());
@@ -38,7 +38,7 @@ class FileCheckerTest {
         Plateau plateau = new Plateau(3, 4);
         
         Exception  exception = assertThrows(IllegalArgumentException.class, () -> {
-			FileChecker.checkRover(line, plateau);
+			InputChecker.checkRover(line, plateau);
 	    });
         
         assertEquals("The rover shoud have 2 coordinates and one direction", exception.getMessage());
@@ -51,7 +51,7 @@ class FileCheckerTest {
         Plateau plateau = new Plateau(3, 4);
         
         Exception  exception = assertThrows(IllegalArgumentException.class, () -> {
-			FileChecker.checkRover(line, plateau);
+			InputChecker.checkRover(line, plateau);
 	    });
         
         assertEquals("The rover's direction must be N, E, S or W", exception.getMessage());
@@ -64,7 +64,7 @@ class FileCheckerTest {
         Plateau plateau = new Plateau(3, 4);
         
         Exception  exception = assertThrows(IllegalArgumentException.class, () -> {
-			FileChecker.checkRover(line, plateau);
+			InputChecker.checkRover(line, plateau);
 	    });
         
         assertEquals("The rover's coordinates must be less than plateau's ones", exception.getMessage());

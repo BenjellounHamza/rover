@@ -84,6 +84,11 @@ public class Rover {
 	public void takeOrder(Command command) {
 		commands.add(command);
 	}
+
+	@Override
+	public String toString() {
+		return this.x + " " + this.y + " " + this.cardinalDirection;
+	}
 	
 }
 
