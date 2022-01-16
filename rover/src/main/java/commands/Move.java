@@ -1,6 +1,6 @@
 package commands;
 
-import model.Rover;
+import commander.Rover;
 
 public class Move extends Command {
 	

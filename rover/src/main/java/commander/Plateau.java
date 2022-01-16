@@ -1,4 +1,4 @@
-package model;
+package commander;
 
 public class Plateau {
 	int x;

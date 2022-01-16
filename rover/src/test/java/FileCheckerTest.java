@@ -2,7 +2,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import model.Plateau;
+import commander.Plateau;
 import utils.FileChecker;
 
 class FileCheckerTest {
@@ -15,7 +15,7 @@ class FileCheckerTest {
 			FileChecker.checkPlateau(line);
 	    });
         
-        assertEquals("The plateau's coordinates must not be null or equal to 0", exception.getMessage());
+        assertEquals("The plateau's coordinates must be greater than 0", exception.getMessage());
     
     }
     
@@ -67,7 +67,7 @@ class FileCheckerTest {
 			FileChecker.checkRover(line, plateau);
 	    });
         
-        assertEquals("The rover's coordinates must not be null or beyond plateau's ones", exception.getMessage());
+        assertEquals("The rover's coordinates must be less than plateau's ones", exception.getMessage());
     }
 
 }

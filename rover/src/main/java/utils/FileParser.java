@@ -1,7 +1,7 @@
 package utils;
 
+import commander.*;
 import commands.CommandFactory;
-import model.*;
 
 public class FileParser {
 

@@ -4,8 +4,8 @@ import java.net.URISyntaxException;
 import java.nio.file.Paths;
 import java.util.Scanner;
 
-import model.Plateau;
-import model.Rover;
+import commander.Plateau;
+import commander.Rover;
 import utils.FileParser;
 
 public class Main {

@@ -1,7 +1,7 @@
 package commands;
 
-import model.CardinalDirection;
-import model.Rover;
+import commander.Rover;
+import utils.CardinalDirection;
 
 public class SpinR extends Command {
 

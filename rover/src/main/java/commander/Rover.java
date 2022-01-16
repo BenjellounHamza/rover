@@ -1,4 +1,4 @@
-package model;
+package commander;
 import utils.*;
 import java.util.*;
 import commands.*;
@@ -36,7 +36,7 @@ public class Rover {
 	}
 
 	public void setX(int x) {
-		SetterChecker.setRoverXPositionCheker(this, x);
+		CommandChecker.setRoverXPositionCheker(this, x);
 		this.x = x;
 	}
 
@@ -45,7 +45,7 @@ public class Rover {
 	}
 
 	public void setY(int y) {
-		SetterChecker.setRoverYPositionCheker(this, y);
+		CommandChecker.setRoverYPositionCheker(this, y);
 		this.y = y;
 	}
 
