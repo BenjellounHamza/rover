@@ -1,6 +1,6 @@
 package commands;
 
-import commander.Rover;
+import client.Rover;
 import utils.CardinalDirection;
 
 public class SpinR extends Command {

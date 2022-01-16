@@ -1,8 +1,6 @@
-package commands;
+package client;
 
-import commander.Rover;
-
-public class CommandChecker {
+public class RoverChecker {
 	
 	public static void setRoverXPositionCheker(Rover rover, int x){
 		if(x > rover.getPlateau().getX() || x < 0) {

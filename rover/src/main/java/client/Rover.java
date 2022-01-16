@@ -1,4 +1,4 @@
-package commander;
+package client;
 import utils.*;
 import java.util.*;
 import commands.*;
@@ -28,7 +28,7 @@ public class Rover {
 		this.y = y;
 		this.cardinalDirection = cardinalDirection;
 		this.plateau = plateau;
-		this.commands = new ArrayList<Command>();
+		this.commands = new ArrayList<>();
 	}
 
 	public int getX() {
@@ -36,7 +36,7 @@ public class Rover {
 	}
 
 	public void setX(int x) {
-		CommandChecker.setRoverXPositionCheker(this, x);
+		RoverChecker.setRoverXPositionCheker(this, x);
 		this.x = x;
 	}
 
@@ -45,7 +45,7 @@ public class Rover {
 	}
 
 	public void setY(int y) {
-		CommandChecker.setRoverYPositionCheker(this, y);
+		RoverChecker.setRoverYPositionCheker(this, y);
 		this.y = y;
 	}
 
@@ -77,6 +77,8 @@ public class Rover {
 		for(Command command: commands) {
 			command.execute(this);
 		}
+		// We should clear commands to not re-execute them
+		commands.clear();
 	}
 	
 	public void takeOrder(Command command) {

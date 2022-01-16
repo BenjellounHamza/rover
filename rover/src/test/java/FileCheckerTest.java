@@ -2,8 +2,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import commander.Plateau;
 import utils.FileChecker;
+import utils.Plateau;
 
 class FileCheckerTest {
 

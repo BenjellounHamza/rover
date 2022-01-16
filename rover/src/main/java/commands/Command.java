@@ -1,6 +1,6 @@
 package commands;
 
-import commander.Rover;
+import client.Rover;
 
 public abstract class Command {
 	

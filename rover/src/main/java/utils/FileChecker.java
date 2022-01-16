@@ -4,8 +4,6 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-import commander.Plateau;
-
 public class FileChecker {
 
 	
@@ -44,7 +42,6 @@ public class FileChecker {
  	           throw new IllegalArgumentException("The rover's commands must be either M, L or R");
             }
 		 }
-		
 	}
 
 }

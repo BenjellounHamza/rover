@@ -1,6 +1,6 @@
 package commands;
 
-import commander.Rover;
+import client.Rover;
 
 public class Move extends Command {
 	
@@ -25,7 +25,7 @@ public class Move extends Command {
 	@Override
 	void executeW(Rover rover) {
 		rover.setX(rover.getX() - 1);
-		
+
 	}
 
 }

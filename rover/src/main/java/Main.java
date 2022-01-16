@@ -4,9 +4,9 @@ import java.net.URISyntaxException;
 import java.nio.file.Paths;
 import java.util.Scanner;
 
-import commander.Plateau;
-import commander.Rover;
+import client.Rover;
 import utils.FileParser;
+import utils.Plateau;
 
 public class Main {
 	public static void main(String[] args) throws URISyntaxException, FileNotFoundException {
