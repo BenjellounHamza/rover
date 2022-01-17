@@ -1,7 +1,7 @@
 package utils;
 
 import client.*;
-import commands.CommandFactory;
+import commands.CommandEnum;
 
 public class FileParser {
 
@@ -25,7 +25,7 @@ public class FileParser {
 	public static void addOrders(String line, Rover rover) {
 		InputChecker.checkCommands(line);
 		for (String operation: line.split("")) {
-             rover.takeOrder(CommandFactory.valueOf(operation).getCommand());
+             rover.takeOrder(CommandEnum.valueOf(operation).getCommand());
 		 }
 		
 	}

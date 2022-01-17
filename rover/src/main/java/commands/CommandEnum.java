@@ -1,13 +1,13 @@
 package commands;
 
-public enum CommandFactory {
+public enum CommandEnum {
 	M(new Move()),
 	R(new SpinR()),
 	L(new SpinL());
 
 	final private Command command;
 	
-	CommandFactory(Command command) {
+	CommandEnum(Command command) {
 		this.command = command;
 	}
 	public Command getCommand() {
